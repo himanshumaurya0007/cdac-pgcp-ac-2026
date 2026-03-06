@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        input {
+            margin: 5px 0;
+            padding: 5px;
+        }
+
+        button {
+            margin: 5px 5px 5px 0;
+            padding: 6px 10px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Array Operations</h2>
+
+    <label>Enter Value:</label><br>
+    <input type="text" id="valueInput">
+    <br>
+
+    <button onclick="checkValue()">Check Value</button>
+    <button onclick="addToEnd()">Add To End</button>
+
+    <p id="result"></p>
+
+    <hr>
+
+    <!-- Insert at Index -->
+    <h3>Insert at Index</h3>
+
+    <label>Enter Index:</label><br>
+    <input type="number" id="insertIndex">
+    <br>
+
+    <button onclick="insertAtIndex()">Insert</button>
+
+    <p id="insertResult"></p>
+
+    <hr>
+
+    <!-- Remove at Index -->
+    <h3>Remove at Index</h3>
+
+    <label>Enter Index:</label><br>
+    <input type="number" id="removeIndex">
+
+    <br>
+
+    <button onclick="removeAtIndex()">Remove</button>
+
+    <p id="removeResult"></p>
+
+    <script>
+        let arr = [];
+
+        function checkValue() {
+            const value = document.getElementById("valueInput").value.trim();
+            const result = document.getElementById("result");
+
+            if (arr.includes(value)) {
+                result.textContent = "Value Found in Array";
+            } else {
+                result.textContent = "Value Not Found in Array";
+            }
+        }
+
+        function addToEnd() {
+            const value = document.getElementById("valueInput").value.trim();
+            if (value === "") return;
+
+            arr.push(value);
+            document.getElementById("result").textContent =
+                "Updated Array: " + arr.join(", ");
+        }
+
+        function insertAtIndex() {
+            const value = document.getElementById("valueInput").value.trim();
+            const index = parseInt(document.getElementById("insertIndex").value);
+            const output = document.getElementById("insertResult");
+
+            if (isNaN(index) || index < 0 || index > arr.length) {
+                output.textContent = "Invalid Index";
+                return;
+            }
+
+            arr.splice(index, 0, value);
+            output.textContent = "Final Array: " + arr.join(", ");
+        }
+
+        function removeAtIndex() {
+            const index = parseInt(document.getElementById("removeIndex").value);
+            const output = document.getElementById("removeResult");
+
+            if (isNaN(index) || index < 0 || index >= arr.length) {
+                output.textContent = "Invalid Index";
+                return;
+            }
+
+            arr.splice(index, 1);
+            output.textContent = "Final Array: " + arr.join(", ");
+        }
+    </script>
+
+</body>
+
+</html>
