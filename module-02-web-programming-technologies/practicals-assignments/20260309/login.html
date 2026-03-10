@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Program 1</h1>
+    <form name="loginForm" onsubmit="return validateForm()" action="home.html">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            let validateName, validatePassword;
+
+            let name = document.forms["loginForm"]["username"].value;
+            if (name.trim() == "") {
+                alert("Name field cannot be empty.");
+                document.forms["loginForm"]["username"].focus();
+                validateName = false;
+
+            } else if (!isNaN(name)) {
+                alert("Name cannot contain number values.");
+                document.forms["loginForm"]["username"].focus();
+                validateName = false;
+
+            } else if (name.length < 2 || name.length > 20) {
+                alert("Name must be at least 2 characters and cannot exceed 20 characters.");
+                document.forms["loginForm"]["username"].focus();
+                validateName = false;
+
+            } else {
+                validateName = true;
+            }
+
+            let pass = document.forms.loginForm.password.value;
+            if (pass.trim() == "") {
+                alert("Password field cannot be empty.");
+                document.forms.loginForm.password.focus();
+                validatePassword = false;
+            }
+            else if (pass.length < 2 || pass.length > 8) {
+                alert("Password must be at least 2 characters and cannot exceed 8 characters.");
+                document.forms.loginForm.password.focus();
+                validatePassword = false;
+            }
+            else {
+                validatePassword = true;
+            }
+
+            if (name == "iet" && pass == "iet")
+                return true;
+        }
+    </script>
+
+</body>
+
+</html>
