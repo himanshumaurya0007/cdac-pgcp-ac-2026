@@ -1,0 +1,14 @@
+{
+  "name": "npmdemoproject",
+  "version": "1.0.0",
+  "description": "This is a demo project that is for understanding the working and commands setup for npm based projects.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Himanshu Maurya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
