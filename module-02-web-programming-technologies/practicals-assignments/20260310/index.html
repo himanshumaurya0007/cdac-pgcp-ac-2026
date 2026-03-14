@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Examples Programs</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+</head>
+
+<body>
+    <!-- // ------- Program 3 ------- -->
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <br>
+
+    <button id="btnHello">Display, Hello!</button>
+    <br>
+    <br>
+
+    <!-- // ------- Program 4 ------- -->
+    <label for="factorial">Enter number: </label>
+    <input type="number" name="factorial" id="factorial">
+
+    <p id="p4"></p>
+    <br>
+    <br>
+
+    <!-- // ------- Program 5 ------- -->
+    <button id="btnStart">Start Animation</button>
+    <br>
+    <br>
+
+    <div id="box" style="width: 50px; height: 50px; background-color: chartreuse; position:relative;"></div>
+
+    <script>
+        $(document).ready(function () {
+
+            // ------- Program 3 -------
+            $("#btnHello").click(function () {
+
+                // Normal Hello
+                $("#p1").text("Hello");
+
+                // Italic Hello
+                $("#p2").html("<i>Hello</i>");
+
+                // Underline Hello
+                $("#p3").html("<u>Hello</u>");
+
+            });
+
+            // ------- Program 4 -------
+            $("#factorial").change(function () {
+                // Get number from input
+                let n = parseInt($("#factorial").val());
+
+                let fact = 1;
+
+                // Calculate factorial
+                for (let i = 1; i <= n; i++) {
+                    fact = fact * i;
+                }
+
+                // Display result
+                $("#p4").text("Factorial = " + fact);
+            });
+
+            // ------- Program 5 -------
+            $("#btnStart").click(function () {
+                $("#box").animate({ left: "300px", width: "100px", height: "100px" }, 1000);
+            });
+        });
+    </script>
+</body>
+
+</html>
