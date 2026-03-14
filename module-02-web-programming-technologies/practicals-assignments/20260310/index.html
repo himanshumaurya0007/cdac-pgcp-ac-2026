@@ -30,6 +30,7 @@
 
     <!-- // ------- Program 5 ------- -->
     <button id="btnStart">Start Animation</button>
+    <button id="btnStop">Stop Animation</button>
     <br>
     <br>
 
@@ -71,6 +72,10 @@
             // ------- Program 5 -------
             $("#btnStart").click(function () {
                 $("#box").animate({ left: "300px", width: "100px", height: "100px" }, 1000);
+            });
+
+            $("#btnStop").click(function () {
+                $("#box").stop();
             });
         });
     </script>
