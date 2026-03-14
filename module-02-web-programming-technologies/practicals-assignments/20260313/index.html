@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- // ------- Program 6 (Extra) ------- -->
+    <label for="firstName">Enter first name</label>
+    <input type="text" id="firstName" name="firstName">
+    <br>
+    <br>
+
+    <label for="lastName">Enter last name</label>
+    <input type="text" id="lastName" name="lastName">
+    <br>
+    <br>
+
+    <label for="birthDate">Enter DOB</label>
+    <input type="date" id="birthDate" name="birthDate">
+    <br>
+    <br>
+
+    <button id="generateUsername" onclick="generateUsername()">Generate Username</button>
+
+    <p id="result"></p>
+
+    <script>
+        function generateUsername() {
+
+            let fName = document.getElementById("firstName").value;
+            let lName = document.getElementById("lastName").value;
+            let dob = document.getElementById("birthDate").value;
+
+            if (!fName || !lName || !dob) {
+                document.getElementById("result").innerText = "Please fill all fields";
+                return;
+            }
+
+            // For debugging
+            // console.log(fName);
+            // console.log(lName);
+            // console.log(dob);
+
+            let firstPart = fName.substring(0, 2).toLowerCase();
+            let lastPart = lName.slice(-2).toLowerCase();
+
+            // convert string to Date
+            let birthDate = new Date(dob);
+            let today = new Date();
+
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let monthDiff = today.getMonth() - birthDate.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            let username = firstPart + age + lastPart;
+
+            document.getElementById("result").innerText = "Your username is " + username;
+        }
+    </script>
+</body>
+
+</html>
