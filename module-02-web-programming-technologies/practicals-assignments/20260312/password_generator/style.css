@@ -1,0 +1,86 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background and font */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ECECEC;
+    color: #2C3E50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container */
+.container {
+    background-color: #FFFFFF;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 420px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2C3E50;
+}
+
+/* Labels */
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Range slider */
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Checkbox styling spacing */
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Checkbox group */
+.options {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* Generate button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #27AE60;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+    background-color: #219150;
+}
+
+/* Password output */
+#result {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #F4F4F4;
+    border-radius: 6px;
+    font-weight: bold;
+    word-break: break-all;
+    text-align: center;
+}

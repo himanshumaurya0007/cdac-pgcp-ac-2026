@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+</head>
+
+<body>
+    <!-- Program 3 -->
+    <form id="todoForm">
+        <label for="userId">Enter user Id: </label>
+        <input type="number" id="userId" name="userId">
+        <br>
+        <br>
+
+        <label for="title">Enter title: </label>
+        <input type="text" id="title" name="title">
+        <br>
+        <br>
+
+        <label for="isCompleted">Is completed: </label>
+        <input type="checkbox" id="isCompleted" name="isCompleted">
+        <br>
+        <br>
+
+        <input type="submit" value="Add">
+        <br>
+        <br>
+        <br>
+
+        <h3>Response:</h3>
+        <div id="todoList"></div>
+    </form>
+
+    <!-- Program 4 -->
+    <hr>
+    <div id="anotherHtmlPage"></div>
+
+    <!-- Program 6 -->
+    <!-- Check sample.js file. (Program was executed in Node.js' terminal editior) -->
+
+    <!-- Program 7 (Extra) -->
+    <!-- Check password_generator.html file  -->
+     
+    <script>
+        // <!-- Program 3 -->
+        $(document).ready(function () {
+            $("#todoForm").submit(function (e) {
+                e.preventDefault();
+
+                let todoData = {
+                    userId: $("#userId").val(),
+                    title: $("#title").val(),
+                    completed: $("#isCompleted").is(":checked")
+                };
+
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/todos",
+                    type: "POST",
+                    data: JSON.stringify(todoData),
+                    contentType: "application/json",
+
+                    success: function (response) {
+                        $("#todoList").html(`
+                            <p><b>ID:</b> ${response.id}</p>
+                            <p><b>Title:</b> ${response.title}</p>
+                            <p><b>Completed:</b> ${response.completed}</p>
+                        `);
+
+                        console.log("Data posted successfully", response);
+                    },
+
+                    error: function () {
+                        alert("Error posting data");
+                    }
+                });
+            });
+
+            // <!-- Program 4 -->
+            $("#anotherHtmlPage").load("about_us.html")
+        });
+    </script>
+</body>
+
+</html>
