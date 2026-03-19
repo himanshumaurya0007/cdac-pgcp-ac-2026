@@ -13,16 +13,25 @@
 // 3. To run the project, execute the command: npm run dev 
 import SayHello from './components/Hello';
 import Addition from './components/Addition';
+
+import IsPalindome from './components/IsPlaindrome';
+
 import Data from './components/Data';
 
 function App() {
   return (
     <>
-      <h1>Hello!</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam, ipsum illo, sit fuga eaque non porro labore molestias repudiandae adipisci id quam aperiam explicabo blanditiis quod molestiae earum itaque sequi reiciendis! Obcaecati totam nesciunt, necessitatibus veniam accusantium inventore eos rerum dignissimos hic assumenda eius dolores, commodi aspernatur maxime unde voluptatem illum enim quis accusamus molestias! Reprehenderit, vero laborum enim dolorum iste possimus qui error et repudiandae animi excepturi distinctio ratione recusandae quisquam quos eveniet dignissimos, asperiores quas esse ipsum blanditiis praesentium ducimus adipisci sapiente. Ut earum, rem nisi maiores, minima vero, cum ullam eaque modi dolore amet autem dolorum natus?</p>
-
       <SayHello name={"Himanshu Maurya"} />
       <Addition num1={13} num2={18} />
+
+      {/* ------- Program 2 ------- */}
+      <h1>Program 2</h1>
+      <IsPalindome />
+      <br />
+      <br />
+
+      {/* ------- Program 3 ------- */}
+      <h1>Program 3</h1>
       <Data />
     </>
   )
