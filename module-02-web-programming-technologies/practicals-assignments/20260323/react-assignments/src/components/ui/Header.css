@@ -1,0 +1,87 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+    background-color: #0f172a;
+    /* dark blue */
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Inner container */
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.navbar__logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Menu */
+.navbar__menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Links */
+.navbar__link {
+    text-decoration: none;
+    color: #cbd5f5;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect */
+.navbar__link:hover {
+    color: #ffffff;
+}
+
+/* Active link styling (NavLink auto adds "active") */
+.navbar__link.active {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+/* Underline animation */
+.navbar__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #38bdf8;
+    transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after,
+.navbar__link.active::after {
+    width: 100%;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+    .navbar__menu {
+        flex-direction: column;
+        background: #0f172a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        display: none;
+        /* later can toggle with JS */
+    }
+}
