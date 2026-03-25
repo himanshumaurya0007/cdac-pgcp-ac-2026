@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+    <h2>Edit Todo</h2>
+
+    <form action="/update/<%= todo.id %>?_method=PUT" method="POST" class="edit-form">
+        <input type="text" name="task" value="<%= todo.task %>" required>
+
+        <label>
+            <input type="checkbox" name="completed" <%=todo.completed ? 'checked' : '' %>>
+            Completed
+        </label>
+
+        <button type="submit" class="btn btn-add">Update</button>
+    </form>
+
+    <a href="/" class="back-link">← Back</a>
+
+    <%- include('partials/footer') %>

@@ -1,0 +1,17 @@
+[
+    {
+        "team": "India",
+        "score": "250/3",
+        "status": "Live"
+    },
+    {
+        "team": "Australia",
+        "score": "245/8",
+        "status": "Live"
+    },
+    {
+        "team": "England",
+        "score": "180/10",
+        "status": "Finished"
+    }
+]

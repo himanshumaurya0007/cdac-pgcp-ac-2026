@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+    <form action="/add" method="POST">
+        <input type="text" name="task" placeholder="Enter task..." required>
+        <button type="submit" class="btn btn-add">Add</button>
+    </form>
+
+    <ul>
+        <% todos.forEach(todo=> { %>
+            <li>
+                <span class="task <%= todo.completed ? 'completed' : '' %>">
+                    <%= todo.task %>
+                </span>
+
+                <div class="actions">
+                    <a href="/edit/<%= todo.id %>" class="btn btn-edit">Edit</a>
+
+                    <form action="/delete/<%= todo.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-delete">Delete</button>
+                    </form>
+                </div>
+            </li>
+            <% }) %>
+    </ul>
+
+    <%- include('partials/footer') %>

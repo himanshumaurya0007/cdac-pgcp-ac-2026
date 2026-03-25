@@ -1,0 +1,183 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= HEADINGS ================= */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* ================= FORM ================= */
+/* Default form (Add Todo - row layout) */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Edit form (column layout ONLY) */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ================= INPUT ================= */
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50;
+}
+
+/* ================= BUTTON SYSTEM ================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s ease;
+    color: #fff;
+}
+
+/* Add / Update */
+.btn-add {
+    background-color: #4CAF50;
+}
+
+.btn-add:hover {
+    background-color: #45a049;
+}
+
+/* Edit */
+.btn-edit {
+    background-color: #3498db;
+}
+
+.btn-edit:hover {
+    background-color: #2980b9;
+}
+
+/* Delete */
+.btn-delete {
+    background-color: #e74c3c;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Full width button for edit form */
+.edit-form button {
+    width: 100%;
+}
+
+/* ================= TODO LIST ================= */
+ul {
+    list-style: none;
+}
+
+/* Todo item */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    transition: 0.2s;
+}
+
+li:hover {
+    background: #f0f0f0;
+}
+
+/* ================= TASK ================= */
+.task {
+    font-size: 15px;
+    color: #333;
+}
+
+/* Completed task */
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Remove spacing from nested delete form */
+.actions form {
+    margin: 0;
+}
+
+/* ================= CHECKBOX ================= */
+label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* ================= BACK LINK ================= */
+.back-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

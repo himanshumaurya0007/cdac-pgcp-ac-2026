@@ -1,0 +1,55 @@
+{
+    "matchId": "INDvsAUS_001",
+    "format": "ODI",
+    "venue": "Wankhede Stadium, Mumbai",
+    "date": "2026-03-24",
+    "status": "In Progress",
+    "teams": {
+        "teamA": {
+            "name": "India",
+            "shortName": "IND"
+        },
+        "teamB": {
+            "name": "Australia",
+            "shortName": "AUS"
+        }
+    },
+    "innings": [
+        {
+            "battingTeam": "India",
+            "runs": 275,
+            "wickets": 8,
+            "overs": 50.0,
+            "batting": [
+                {
+                    "playerName": "Rohit Sharma",
+                    "runs": 85,
+                    "balls": 70,
+                    "fours": 8,
+                    "sixes": 3,
+                    "strikeRate": 121.4
+                },
+                {
+                    "playerName": "Virat Kohli",
+                    "runs": 72,
+                    "balls": 68,
+                    "fours": 6,
+                    "sixes": 1,
+                    "strikeRate": 105.8
+                }
+            ],
+            "bowling": [
+                {
+                    "playerName": "Mitchell Starc",
+                    "overs": 10,
+                    "runs": 55,
+                    "wickets": 3,
+                    "economy": 5.5
+                }
+            ]
+        }
+    ],
+    "currentRunRate": 5.5,
+    "requiredRunRate": null,
+    "lastUpdated": "2026-03-24T18:30:00Z"
+}

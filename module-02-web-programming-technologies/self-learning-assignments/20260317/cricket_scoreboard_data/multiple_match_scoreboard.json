@@ -1,0 +1,32 @@
+[
+    {
+        "matchId": "INDvsAUS_001",
+        "teams": [
+            "India",
+            "Australia"
+        ],
+        "score": "275/8",
+        "overs": 50,
+        "status": "Completed"
+    },
+    {
+        "matchId": "ENGvsNZ_002",
+        "teams": [
+            "England",
+            "New Zealand"
+        ],
+        "score": "198/3",
+        "overs": 32.4,
+        "status": "In Progress"
+    },
+    {
+        "matchId": "PAKvsSA_003",
+        "teams": [
+            "Pakistan",
+            "South Africa"
+        ],
+        "score": "—",
+        "overs": 0,
+        "status": "Upcoming"
+    }
+]
