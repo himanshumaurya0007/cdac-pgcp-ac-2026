@@ -55,6 +55,11 @@ cdac-pgcp-ac-2026/
 │ ├── practicals-assignments/
 │ └── self-learning-assignments/
 │
+├── module-03-java-programming/
+│ ├── theory/
+│ ├── practicals-assignments/
+│ └── self-learning-assignments/
+│
 ├── resources/
 │ ├── cheatsheets/
 │ ├── references/
