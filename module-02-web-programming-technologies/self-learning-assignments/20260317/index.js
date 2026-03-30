@@ -2,9 +2,10 @@
 // Kindly, refer "cricket_scoreboard_data" directory.
 
 // ------- Program 2 -------
-// Kindly, refer "cricket_scoreboard_data" directory.
+// Kindly, refer "scoreboard-app" directory.
 
-
+// ------- Program 3 -------
+// Kindly, refer "news-app" directory.
 
 // ------- Program 4 -------
 for (let i = 1; i <= 100; i++) {
