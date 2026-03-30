@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.clock-card {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clock-card h2 {
+    margin-bottom: 10px;
+}
+
+.clock-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
