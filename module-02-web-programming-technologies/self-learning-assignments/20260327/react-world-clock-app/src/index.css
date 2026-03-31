@@ -1,41 +1,82 @@
+/* Global Reset + Smooth Rendering */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #e3e9f0);
     margin: 0;
     padding: 0;
 }
 
+/* App Container */
 .app-container {
     text-align: center;
-    padding: 40px;
+    padding: 40px 20px;
 }
 
+.app-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Clock Layout */
 .clock-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    /* responsive */
+    gap: 25px;
     margin-top: 30px;
 }
 
+/* Clock Card */
 .clock-card {
     position: relative;
-    padding: 20px 30px;
-    border-radius: 10px;
+    padding: 25px 30px;
+    border-radius: 16px;
     color: white;
-    width: 180px;
+    width: 200px;
     text-align: center;
+    backdrop-filter: blur(10px);
+
+    /* Animation */
+    animation: fadeInUp 0.5s ease forwards;
+
+    /* Smooth transitions */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.clock-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Time Text */
+.clock-card p {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+/* Country Title */
+.clock-card h2 {
+    font-size: 18px;
+    margin-top: 31px;
 }
 
 /* AM Style */
 .clock-card.am {
-    background-color: #4facfe;
-    /* Light blue */
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
 }
 
 /* PM Style */
 .clock-card.pm {
-    background-color: #1c1c3c;
-    /* Dark theme */
+    background: linear-gradient(135deg, #141e30, #243b55);
 }
 
 /* Close Button */
@@ -44,22 +85,167 @@ body {
     top: 8px;
     right: 10px;
     border: none;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.2);
     color: white;
-    font-size: 16px;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 50%;
     cursor: pointer;
+
+    transition: all 0.2s ease;
 }
 
+/* Close Button Hover */
+.close-btn:hover {
+    background: rgba(255, 0, 0, 0.8);
+    transform: scale(1.2);
+}
+
+/* Add Clock Container */
 .add-clock {
-    margin: 20px 0;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
+/* Select Wrapper (for custom arrow styling) */
 .add-clock select {
-    padding: 8px;
-    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding: 10px 40px 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+
+    /* Custom arrow */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23333' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px;
+
+    transition: all 0.25s ease;
 }
 
+/* Hover */
+.add-clock select:hover {
+    border-color: #4facfe;
+}
+
+/* Focus */
+.add-clock select:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
+}
+
+/* Disabled state (future-proof) */
+.add-clock select:disabled {
+    background: #eee;
+    cursor: not-allowed;
+}
+
+/* Add Button */
 .add-clock button {
-    padding: 8px 12px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    transition: all 0.3s ease;
+}
+
+/* Button Hover */
+.add-clock button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(79, 172, 254, 0.4);
+}
+
+/* Button Active */
+.add-clock button:active {
+    transform: scale(0.96);
+}
+
+/* Disabled Button */
+.add-clock button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Entry Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Time Text Base */
+.time-text {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 10px;
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Loading Skeleton */
+.time-text.loading {
+    color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer Effect */
+.time-text.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+
+    animation: shimmer 1.2s infinite;
+}
+
+/* When Time Appears */
+.time-text.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
 }

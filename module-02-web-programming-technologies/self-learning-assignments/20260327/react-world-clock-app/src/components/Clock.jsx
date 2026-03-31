@@ -11,19 +11,20 @@ import moment from "moment-timezone";
  */
 const Clock = ({ id, timezone, country, onRemove }) => {
     const [time, setTime] = useState("");
+    const [isAM, setIsAM] = useState(true);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            const currentTime = moment().tz(timezone).format("HH:mm:ss");
-            setTime(currentTime);
-        }, 1000);
+        const updateTime = () => {
+            const now = moment().tz(timezone);
+            setTime(now.format("HH:mm:ss"));
+            setIsAM(now.format("A") === "AM");
+        };
 
-        // Cleanup (important)
+        updateTime();
+        const interval = setInterval(updateTime, 1000);
+
         return () => clearInterval(interval);
     }, [timezone]);
-
-    // Determine AM / PM
-    const isAM = moment().tz(timezone).format("A") === "AM";
 
     return (
         <div className={`clock-card ${isAM ? "am" : "pm"}`}>
@@ -32,7 +33,11 @@ const Clock = ({ id, timezone, country, onRemove }) => {
             </button>
 
             <h2>{country}</h2>
-            <p>{time}</p>
+
+            {/* Conditional render */}
+            <p className={time ? "time-text show" : "time-text loading"}>
+                {time || "00:00:00"}
+            </p>
         </div>
     );
 };
