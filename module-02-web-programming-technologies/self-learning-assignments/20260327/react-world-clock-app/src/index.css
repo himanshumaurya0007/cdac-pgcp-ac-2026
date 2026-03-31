@@ -18,17 +18,34 @@ body {
 }
 
 .clock-card {
-    background: white;
+    position: relative;
     padding: 20px 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 180px;
+    text-align: center;
 }
 
-.clock-card h2 {
-    margin-bottom: 10px;
+/* AM Style */
+.clock-card.am {
+    background-color: #4facfe;
+    /* Light blue */
 }
 
-.clock-card p {
-    font-size: 24px;
-    font-weight: bold;
+/* PM Style */
+.clock-card.pm {
+    background-color: #1c1c3c;
+    /* Dark theme */
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
