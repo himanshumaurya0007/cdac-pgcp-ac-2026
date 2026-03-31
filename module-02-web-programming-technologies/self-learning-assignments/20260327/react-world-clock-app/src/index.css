@@ -49,3 +49,17 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
+
+.add-clock {
+    margin: 20px 0;
+}
+
+.add-clock select {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.add-clock button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
